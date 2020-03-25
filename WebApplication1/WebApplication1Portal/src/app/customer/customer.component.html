@@ -1,4 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+         
+            <h3><b> Customer Register</b></h3>
 
-<div class = "container">
-    <h1 class = "display-4-text-center">Customer Add</h1>
+            <form [formGroup]="customerregisterForm" (ngSubmit)="onSubmit()">
+
+             
+                <div class="form-group">
+                  
+                    <input type="text" placeholder="Name" formControlName="customerName" class="form-control" [ngClass]="{ 'is-invalid': submitted &amp;&amp; customerregisterForm.controls.customerName.errors }" />
+                    <div *ngIf="submitted &amp;&amp; customerregisterForm.controls.customerName.errors" class="text-danger">
+                        <div *ngIf="customerregisterForm.controls.customerName.errors.required"> Name is required</div>
+                    </div>
+                </div>
+              
+                <div class="form-group">
+                  
+                    <input type="text" placeholder="Create Your UserName" formControlName="customerUserName" class="form-control" [ngClass]="{ 'is-invalid': submitted &amp;&amp; customerregisterForm.controls.customerUserName.errors }" />
+                    <div *ngIf="submitted &amp;&amp; customerregisterForm.controls.customerUserName.errors" class="text-danger">
+                        <div *ngIf="customerregisterForm.controls.customerUserName.errors.required"> UserName is required</div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    
+                    <input type="text" formControlName="customerPassword" class="form-control" placeholder="Create Password" [ngClass]="{ 'is-invalid': submitted &amp;&amp; customerregisterForm.controls.customerPassword.errors }"  />
+                    <div *ngIf="submitted &amp;&amp; customerregisterForm.controls.customerPassword.errors" class="text-danger">
+                        <div *ngIf="customerregisterForm.controls.customerPassword.errors.required">Password is Required</div>
+                        <div *ngIf="customerregisterForm.controls.customerPassword.errors.minlength">Password length more than 6 character</div>
+                    </div>
+                </div>
+
+              
+                <div class="form-group">
+                   
+                    <input type="text" formControlName="email" placeholder="Email address" class="form-control" [ngClass]="{ 'is-invalid': submitted &amp;&amp; customerregisterForm.controls.email.errors }" />
+                    <div *ngIf="submitted &amp;&amp; customerregisterForm.controls.email.errors" class="text-danger">
+                        <div *ngIf="customerregisterForm.controls.email.errors.required">Email is required</div>
+                        <div *ngIf="customerregisterForm.controls.email.errors.email">Email must be a valid email address</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary" >Continue</button>
+                
+                     </div>
+                
+            </form>
+            <h5>You have already an account</h5>
+                <button class="btn btn-primary"   [routerLink]="['/customer-login']">Login</button>
+        </div>
     </div>
+</div>

@@ -10,7 +10,7 @@ namespace WebApplication1.Domains
     {
         public void UserAdd(User user)
         {
-            this.ExecuteNonQuery($"insert into Users(UserName,UserPassword) values('{user.UserName}','{user.UserPassword}')");
+            this.ExecuteNonQuery($"insert into Users(UserName,UserPassword,UserFullName,UserEmail) values('{user.UserName}','{user.UserPassword}','{user.UserFullName}','{user.UserEmail}')");
 
         }
         public int IsLogin(User user)

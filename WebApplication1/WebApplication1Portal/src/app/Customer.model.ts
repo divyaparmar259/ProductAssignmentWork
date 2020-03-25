@@ -1,6 +1,9 @@
-export class Customer
+export class First
 {
-    CustomerId :number;
-    CustomerName : string;
-    CustomerPassword : string;
+    customerId :number;
+    customerName : string;
+    customerUserName : string;
+    customerPassword : string;
+   
+    email: string;
 }

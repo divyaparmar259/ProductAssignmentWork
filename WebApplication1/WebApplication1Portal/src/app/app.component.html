@@ -1,4 +1,20 @@
 
 <div class ="container">
-  <app-customer> </app-customer>
+  <div class="form-group">
+    <div class="col-md-6 offset-md-3">
+         
+      <h3><b>  Select Any One</b></h3>
+    <button class="btn btn-primary" [routerLink]="['/user']">User</button>
+    <h5> Click On a User Button to Add Products</h5>
+
+<div class="form-group">
+  <button class="btn btn-primary" [routerLink]="['/customer']">Customer</button>
+  <h5> Click On a Customer Button to Buy Products</h5>
+</div> 
+</div>
+</div>
+ 
+  <!-- <app-customer> </app-customer> -->
   </div>
+  
+  <router-outlet></router-outlet>

@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+         
+            <h3><b> Customer Login</b></h3>
+
+            <form [formGroup]="customerloginForm" >
+ 
+                <div class="form-group">
+                  
+                    <input type="text" placeholder=" UserName" formControlName="customerUserName" class="form-control" [ngClass]="{ 'is-invalid': submitted &amp;&amp; customerloginForm.controls.customerUserName.errors }" />
+                    <div *ngIf="submitted &amp;&amp; customerloginForm.controls.customerUserName.errors" class="text-danger">
+                        <div *ngIf="customerloginForm.controls.customerUserName.errors.required"> UserName is required</div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    
+                    <input type="text" formControlName="customerPassword" class="form-control" placeholder="Create Password" [ngClass]="{ 'is-invalid': submitted &amp;&amp; customerloginForm.controls.customerPassword.errors }"  />
+                    <div *ngIf="submitted &amp;&amp; customerloginForm.controls.customerPassword.errors" class="text-danger">
+                        <div *ngIf="customerloginForm.controls.customerPassword.errors.required">Password is Required</div>
+                        <div *ngIf="customerloginForm.controls.customerPassword.errors.minlength">Password length more than 6 character</div>
+                    </div>
+                </div>
+
+            
+              
+
+                <div class="form-group">
+                    <button class="btn btn-primary"   [routerLink]="['/product-list']">LogIn</button>
+                   
+            
+                </div>
+                
+                
+            </form>
+        </div>
+    </div>
+</div>

@@ -11,5 +11,8 @@ namespace WebApplication1.Models
 
         public string CustomerName { get; set; }
         public string CustomerPassword { get; set; }
+
+        public string CustomerFullName { get; set; }
+        public string CustomerEmail { get; set; }
     }
 }
